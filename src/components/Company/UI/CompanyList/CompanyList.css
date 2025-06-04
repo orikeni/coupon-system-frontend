@@ -1,0 +1,13 @@
+.List {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.List .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center; 
+  max-width: 1200px;
+}

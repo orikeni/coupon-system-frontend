@@ -1,0 +1,48 @@
+.CouponPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.CouponPage-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.add-item-btn {
+  display: inline-flex;
+ padding: 6px 12px;
+  font-size: 14px;
+  background-color: #e7f0ff;
+  color: #0058cc;
+  border: 1px solid #b3d1ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: auto;
+  max-width: 200px;
+}
+
+.add-item-btn:hover {
+  background-color: #bbdefb;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filters select,
+.filters input {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

@@ -1,0 +1,23 @@
+html, body, #root {
+ 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: var(--text-color, #222);
+  background-color: var(--bg-color, #fff);
+  margin: 0;
+  padding: 0;
+}
+
+.small-swal {
+  font-size: 0.8rem;
+  padding: 10px;
+  width: 300px !important;
+}
