@@ -47,12 +47,47 @@
 }
 
 .not-logged-in {
-  height: 100%;
+  text-align: center;
+  margin-top: 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.not-logged-in h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.not-logged-in p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.not-logged-in button {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #635bf8;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.not-logged-in button:hover {
+  background-color: #3730a3;
+}
+
+.coupon-icon {
+  font-size: 120px;
+  color: #68a0dc; 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 10px;
+  height: 90px;
+  border-radius: 16px;
+  margin-bottom: 8px;
 }
 
