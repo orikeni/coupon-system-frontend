@@ -85,34 +85,44 @@ function CustomerDetails(): JSX.Element {
         {formState.errors.email && <span className="error-message">{formState.errors.email?.message}</span>}
       </div>
 
-      <div className="form-group checkbox-group">
-  <label>
-    <input
-      type="checkbox"
-      checked={changePassword}
-      onChange={() => setChangePassword(!changePassword)}
-    />
-    I want to change password
-  </label>
-</div>
-
-  {changePassword && (
-    <div className="form-group">
-      <label htmlFor="password">New Password</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="Enter new password"
-        {...register("password", {
-          required: { value: true, message: "Password is required" },
-          minLength: { value: 5, message: "Minimum 5 characters" },
-        })}
-      />
-      {formState.errors.password && (
-        <span className="error-message">{formState.errors.password.message}</span>
+        {param.id && (
+        <div className="form-group checkbox-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={changePassword}
+              onChange={() => setChangePassword(!changePassword)}
+            />
+            I want to change password
+          </label>
+        </div>
       )}
-    </div>
-  )}
+
+        {(!param.id || changePassword) && (
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder={param.id ? "Enter new password" : "Enter password"}
+              {...register("password", {
+                required: {
+                  value: !param.id || changePassword,
+                  message: "Password is required"
+                },
+                minLength: {
+                  value: 5,
+                  message: "Minimum 5 characters"
+                }
+              })}
+            />
+            {formState.errors.password && (
+              <span className="error-message">
+                {formState.errors.password.message}
+              </span>
+            )}
+          </div>
+        )}
 
       <button>{param.id ? 'Update' : 'Add'}</button>
     </form>
