@@ -73,31 +73,41 @@ function CompanyDetails(): JSX.Element {
         {formState.errors.email && <span className="error-message">{formState.errors.email?.message}</span>}
       </div>
 
-      <div className="form-group checkbox-group">
-        <label>
-          <input
-            type="checkbox"
-            checked={changePassword}
-            onChange={() => setChangePassword(!changePassword)}
-          />
-          I want to change password
-        </label>
-      </div>
+        {param.id && (
+        <div className="form-group checkbox-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={changePassword}
+              onChange={() => setChangePassword(!changePassword)}
+            />
+            I want to change password
+          </label>
+        </div>
+      )}
 
-        {changePassword && (
+        {(!param.id || changePassword) && (
           <div className="form-group">
-            <label htmlFor="password">New Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
-              placeholder="Enter new password"
+              placeholder={param.id ? "Enter new password" : "Enter password"}
               {...register("password", {
-                required: { value: true, message: "Password is required" },
-                minLength: { value: 5, message: "Minimum 5 characters" },
+                required: {
+                  value: !param.id || changePassword,
+                  message: "Password is required"
+                },
+                minLength: {
+                  value: 5,
+                  message: "Minimum 5 characters"
+                }
               })}
             />
             {formState.errors.password && (
-              <span className="error-message">{formState.errors.password.message}</span>
+              <span className="error-message">
+                {formState.errors.password.message}
+              </span>
             )}
           </div>
         )}
