@@ -1,0 +1,43 @@
+.not-found-container {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.not-found-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.not-found-container p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.not-found-image {
+  width: 180px;
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.not-found-btn {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: fit-content;
+  max-width: 180px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+.not-found-btn:hover {
+  background-color: #3730a3;
+}

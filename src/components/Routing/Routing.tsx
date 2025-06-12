@@ -11,6 +11,7 @@ import CustomerDetails from "../Customer/UI/CustomerDetails/CustomerDetails";
 import CouponPage from "../Coupon/UI/CouponPage/CouponPage";
 import CouponDetails from "../Coupon/UI/CouponDetails/CouponDetails";
 import MyCoupons from "../Coupon/UI/MyCoupons/MyCoupons";
+import PageNotFound from "../Exception/PageNotFound/PageNotFound";
 
 function Routing(): JSX.Element {
     return (
@@ -26,9 +27,7 @@ function Routing(): JSX.Element {
                 <Route path="/coupon-page" element={<RoutingGuard child={<CouponPage />} />}/>
                 <Route path="/coupon-details/:id?" element={<RoutingGuard child={<CouponDetails />} />}/>
                 <Route path="/my-coupons" element={<RoutingGuard child={<MyCoupons />} />}/>
-
-
-
+                <Route path="*" element={<PageNotFound />} />
 
 
             </Routes>
